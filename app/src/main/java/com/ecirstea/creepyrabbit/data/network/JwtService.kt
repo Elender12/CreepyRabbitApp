@@ -10,7 +10,7 @@ import kotlinx.coroutines.withContext
 
 private const val TAG = "JWTService"
 class JwtService {
-    private val retrofit = RetrofitHelper.getApiClient()
+    private val retrofit = RetrofitHelper.getApiClientForUsers()
 
     suspend fun authenticateUser(jwtRequest: JwtRequest) : JwtResponse? {
 

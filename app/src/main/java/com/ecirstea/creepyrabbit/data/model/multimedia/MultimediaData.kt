@@ -1,0 +1,13 @@
+package com.ecirstea.creepyrabbit.data.model.multimedia
+
+import com.google.gson.annotations.SerializedName
+
+data class MultimediaData(
+  val audioUrl: String = "",
+  val author: String = "",
+  val category: String = "",
+  val imageUrl: String = "",
+  val mediaId: String = "",
+  val narrator: String = "",
+  val title: String = ""
+)

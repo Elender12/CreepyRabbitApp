@@ -10,9 +10,10 @@ object RetrofitHelper {
 
 
          val BASEURL = "http://10.0.2.2:9100/"
+         val BASEURLMULTIMEDIA = "http://10.0.2.2:9801/"
         private var retrofit:Retrofit?=null
 
-        fun getApiClient(): Retrofit {
+        fun getApiClientForUsers(): Retrofit {
             val gson = GsonBuilder()
                 .setLenient()
                 .create()
@@ -30,6 +31,24 @@ object RetrofitHelper {
             }
             return retrofit!!
         }
+    fun getApiClientForMultimedia(): Retrofit {
+        val gson = GsonBuilder()
+            .setLenient()
+            .create()
+        val okHttpClient = OkHttpClient.Builder()
+            .readTimeout(100, TimeUnit.SECONDS)
+            .connectTimeout(100, TimeUnit.SECONDS)
+            .build()
+        if (retrofit == null) {
+
+            retrofit = Retrofit.Builder()
+                .baseUrl(BASEURL)
+                .client(okHttpClient)
+                .addConverterFactory(GsonConverterFactory.create(gson))
+                .build()
+        }
+        return retrofit!!
+    }
     }
 
     /*fun getRetrofit(): Retrofit {

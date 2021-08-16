@@ -24,7 +24,7 @@ class JwtViewModel : ViewModel(){
             val jwtRequest = JwtRequest(username, password)
        //     isLoading.postValue(true)
             val result = getJwtUseCase(jwtRequest)
-            Log.d(TAG, "onCreate: result is: "+result)
+            Log.d(TAG, "onCreate: result is: $result")
           jwtModel.postValue(result)
         }
     }
