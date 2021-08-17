@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CreepyRabbitApp"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.view.HomeActivity"></activity>
+        <activity android:name=".ui.view.player.PlayerActivity"></activity>
+        <activity android:name=".ui.view.HomeActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

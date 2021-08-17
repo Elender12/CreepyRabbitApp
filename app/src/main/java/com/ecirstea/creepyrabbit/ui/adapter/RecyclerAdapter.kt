@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.ecirstea.creepyrabbit.R
 import com.ecirstea.creepyrabbit.data.model.multimedia.MultimediaData
 import kotlinx.android.synthetic.main.item_audio_list.view.*
@@ -42,7 +43,7 @@ class RecyclerAdapter(private val context: Context) : RecyclerView.Adapter<Recyc
 
     inner class MetadataHolder(val view: View): RecyclerView.ViewHolder(view){
         fun render(metadata: MultimediaData){
-
+            Glide.with(context).load(metadata.imageUrl).into(view.ivAvatar)
             view.tvAuthor.text = metadata.author
             view.tvNarrator.text = metadata.narrator
             view.tvTitle.text= metadata.title

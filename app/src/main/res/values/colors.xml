@@ -14,4 +14,5 @@
     <color name="colorPrimaryDark">#2464AC</color>
     <color name="colorAccent">#2e87eb</color>
     <color name="colorTextWhite">#F3F3F3</color>
+    <color name="placeholder_bg">#DDDDDD</color>
 </resources>

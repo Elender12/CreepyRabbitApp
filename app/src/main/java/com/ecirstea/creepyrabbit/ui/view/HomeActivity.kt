@@ -2,6 +2,7 @@ package com.ecirstea.creepyrabbit.ui.view
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -67,8 +68,10 @@ class HomeActivity : AppCompatActivity() {
     }
 
     fun observeData () {
-
+        shimmer_view_container.startShimmer()
         viewModel.getAudios().observe(this, {
+            shimmer_view_container.stopShimmer()
+            shimmer_view_container.visibility = View.GONE
             adapter.setListData(it)
             adapter.notifyDataSetChanged()
         })
